@@ -46,8 +46,6 @@ const determineWinner = (userChoice, computerChoice) => {
     } else {
       return "You win! 🎉";
     }
-  } else if (userChoice === "bomb") {
-    return "You win! 🎉";
   }
 };
 
