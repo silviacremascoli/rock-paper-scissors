@@ -55,9 +55,9 @@ const playGame = (input) => {
   const userChoice = input;
   const computerChoice = getComputerChoice();
   let myChoice = document.querySelector("#myChoice");
-  myChoice.innerHTML = `You choose ${userChoice}`;
+  myChoice.innerHTML = `You choose ${userChoice}...`;
   let computersChoice = document.querySelector("#computersChoice");
-  computersChoice.innerHTML = `The computer chooses ${computerChoice}`;
+  computersChoice.innerHTML = `The computer chooses ${computerChoice}...`;
   let winner = document.querySelector("#winner");
   winner.innerHTML = determineWinner(userChoice, computerChoice);
 };
