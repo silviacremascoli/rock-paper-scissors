@@ -16,16 +16,17 @@ const getComputerChoice = () => {
 
   switch (number) {
     case 0:
-      console.log("rock");
+      return "rock";
       break;
     case 1:
-      console.log("paper");
+      return "paper";
       break;
     case 2:
-      console.log("scissors");
+      return "scissors";
       break;
     default:
-      console.log("I don't know what to choose...");
+      return "I don't know what to choose...";
+      break;
   }
 };
 
@@ -50,7 +51,17 @@ const determineWinner = (userChoice, computerChoice) => {
     } else {
       return "You win!";
     }
+  } else if (userChoice === "bomb") {
+    return "You win!";
   }
 };
 
-console.log(determineWinner("paper", "scissors"));
+const playGame = () => {
+  let userChoice = getUserChoice("scissors");
+  let computerChoice = getComputerChoice();
+  console.log(`You choose ${userChoice}`);
+  console.log(`The computer chooses ${computerChoice}`);
+  console.log(determineWinner(userChoice, computerChoice));
+};
+
+playGame();
