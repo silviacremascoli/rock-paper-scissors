@@ -1,3 +1,5 @@
+console.log("Welcome to the game!");
+
 const getUserChoice = (userInput) => {
   userInput = userInput.toLowerCase();
   if (
@@ -12,7 +14,7 @@ const getUserChoice = (userInput) => {
 };
 
 const getComputerChoice = () => {
-  let number = Math.floor(Math.random() * 3);
+  const number = Math.floor(Math.random() * 3);
 
   switch (number) {
     case 0:
@@ -57,8 +59,8 @@ const determineWinner = (userChoice, computerChoice) => {
 };
 
 const playGame = () => {
-  let userChoice = getUserChoice("scissors");
-  let computerChoice = getComputerChoice();
+  const userChoice = getUserChoice("scissors");
+  const computerChoice = getComputerChoice();
   console.log(`You choose ${userChoice}`);
   console.log(`The computer chooses ${computerChoice}`);
   console.log(determineWinner(userChoice, computerChoice));
