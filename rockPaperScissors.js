@@ -1,17 +1,10 @@
-console.log("Welcome to the game!");
-
-const getUserChoice = (userInput) => {
-  userInput = userInput.toLowerCase();
-  if (
-    userInput === "rock" ||
-    userInput === "paper" ||
-    userInput === "scissors"
-  ) {
-    return userInput;
-  } else {
-    console.log("Please provide a valid input!");
-  }
-};
+// const getUserChoice = (event) => {
+//   if (event) {
+//     event.preventDefault();
+//     let userInput = event.target.value;
+//     return userInput.toLowerCase();
+//   }
+// };
 
 const getComputerChoice = () => {
   const number = Math.floor(Math.random() * 3);
@@ -58,12 +51,22 @@ const determineWinner = (userChoice, computerChoice) => {
   }
 };
 
-const playGame = () => {
-  const userChoice = getUserChoice("scissors");
+const playGame = (input) => {
+  const userChoice = input;
   const computerChoice = getComputerChoice();
-  console.log(`You choose ${userChoice}`);
-  console.log(`The computer chooses ${computerChoice}`);
-  console.log(determineWinner(userChoice, computerChoice));
+  let myChoice = document.querySelector("#myChoice");
+  myChoice.innerHTML = `You choose ${userChoice}`;
+  let computersChoice = document.querySelector("#computersChoice");
+  computersChoice.innerHTML = `The computer chooses ${computerChoice}`;
+  let winner = document.querySelector("#winner");
+  winner.innerHTML = determineWinner(userChoice, computerChoice);
 };
 
-playGame();
+const getUserChoice = (event) => {
+  event.preventDefault();
+  let userInput = event.target.value;
+  playGame(userInput);
+};
+
+let select = document.querySelector("#choice");
+select.addEventListener("change", getUserChoice);
