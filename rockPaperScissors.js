@@ -27,27 +27,27 @@ const getComputerChoice = () => {
 
 const determineWinner = (userChoice, computerChoice) => {
   if (userChoice === computerChoice) {
-    return "Tie!";
+    return "Tie! 😀";
   } else if (userChoice === "rock") {
     if (computerChoice === "paper") {
-      return "The computer wins!";
+      return "The computer wins! ☹️";
     } else {
-      return console.log("You win!");
+      return "You win! 🎉";
     }
   } else if (userChoice === "paper") {
     if (computerChoice === "scissors") {
-      return "The computer wins!";
+      return "The computer wins! ☹️";
     } else {
-      return "You win!";
+      return "You win! 🎉";
     }
   } else if (userChoice === "scissors") {
     if (computerChoice === "rock") {
-      return "The computer wins!";
+      return "The computer wins! ☹️";
     } else {
-      return "You win!";
+      return "You win! 🎉";
     }
   } else if (userChoice === "bomb") {
-    return "You win!";
+    return "You win! 🎉";
   }
 };
 
